@@ -297,7 +297,7 @@ body::after{content:'';position:fixed;top:0;left:0;right:0;height:400px;backgrou
 .ctab{font-family:var(--mono);font-size:.52rem;letter-spacing:.12em;color:var(--gray-light);background:transparent;border:none;padding:.5rem 1rem;cursor:pointer;text-transform:uppercase;border-bottom:2px solid transparent;transition:all .2s}
 .ctab.active{color:var(--d7a-pulse);border-bottom-color:var(--d7a-pulse)}
 .ctab:hover{color:var(--d7a-pulse)}
-#chartsGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem}
+#chartsGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.5rem;align-items:start}
 .ichart-container{background:var(--bg2);border:1px solid rgba(255,255,255,0.04);padding:1.2rem;min-width:0;overflow:hidden}
 .ichart-container.charts-full-width{grid-column:1/-1}
 .ichart-header{display:flex;justify-content:space-between;align-items:flex-start;gap:.6rem;margin-bottom:.8rem;min-width:0}
@@ -342,7 +342,7 @@ body::after{content:'';position:fixed;top:0;left:0;right:0;height:400px;backgrou
 .sfbtn{font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;color:var(--gray-light);background:var(--bg2);border:1px solid rgba(255,255,255,0.06);padding:5px 14px;cursor:pointer;text-transform:uppercase;transition:all .2s}
 .sfbtn.active{color:var(--d7a-pulse);border-color:rgba(181,0,0,0.4);background:rgba(181,0,0,0.07)}
 .sfbtn:hover{color:var(--d7a-pulse)}
-#semGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;background:rgba(204,0,0,0.06)}
+#semGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:rgba(204,0,0,0.06);align-items:start}
 .sem-card{background:var(--bg2);padding:1.2rem 1.3rem;border-left:3px solid transparent;transition:all .2s}
 .sem-card:hover{background:rgba(204,0,0,0.02)}
 .sem-card[data-sem="g"]{border-left-color:var(--green)}
@@ -417,6 +417,12 @@ body::after{content:'';position:fixed;top:0;left:0;right:0;height:400px;backgrou
 .stagflation-box h4{font-family:var(--mono);font-size:.52rem;letter-spacing:.15em;color:var(--orange);text-transform:uppercase;margin-bottom:.5rem}
 .stagflation-box p{font-family:var(--body);font-size:.72rem;color:var(--gray-light);line-height:1.5}
 
+@media(min-width:1280px){
+  #chartsGrid{grid-template-columns:repeat(auto-fit,minmax(420px,1fr))}
+  #semGrid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .overflow-x{width:100%;max-width:100%}
+  .comp-table{min-width:100%}
+}
 @media(min-width:1024px){
   .sm-card{transition:background .2s,transform .2s,box-shadow .2s}
   .sm-card:hover{background:rgba(204,0,0,0.04);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.4),0 0 12px rgba(204,0,0,0.08)}
@@ -1285,6 +1291,8 @@ body::after{content:'';position:fixed;top:0;left:0;right:0;height:400px;backgrou
       <div class="poly-source">Señal de deterioro estructural en el sector tech.</div>
       <div class="poly-vs">NUEVO: Confirma que el macro domina sobre catalizadores sectoriales</div>
     </div>
+  </div>
+
 <!-- CHARTS -->
 <div class="day-sep" id="charts">GRÁFICOS — HISTÓRICO 27 MARZO → 10 ABRIL 2026 · 10 SESIONES</div>
 <section class="section">
@@ -1577,7 +1585,6 @@ body::after{content:'';position:fixed;top:0;left:0;right:0;height:400px;backgrou
       <div class="sem-cond">⛔ Régimen CONTAGION activo. Si HY spread cruza 3.20% con datos macro deteriorándose → emergencia crediticia.</div>
     </div>
     </div>
-  </div>
 </section>
 
 <!-- OPERATIVA -->
